@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, TextInput, updateState, View, TouchableHighlight, Dimensions, StyleSheet } from 'react-native';
+import { AppRegistry, Text, TextInput, updateState, ScrollView, View, TouchableHighlight, Dimensions, StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
 
 let deviceHeight = Dimensions.get('window').height;
@@ -25,13 +25,13 @@ export default class App extends Component {
       })
   }
 
-    // When Welcome Page button is pressed, hide Info page and show Welcome page
+    
     handleWelcomePagePress = () => this.setState(state => ({
         welcomePageDisplay: 'block',
         infoPageDisplay: 'none',
     }));
     
-    // When Info Page button is pressed, hide Welcome page and show Info page
+    
     handleInfoPagePress = () => this.setState(state => ({
         welcomePageDisplay: 'none',
         infoPageDisplay: 'block',
@@ -48,7 +48,7 @@ export default class App extends Component {
                         <Text style={styles.title1}>
                             Welcome to Shop App!
                         </Text>
-                        <Text style = {styles.title1}>
+                        <Text style = {styles.title2}>
                           Grocery List Organizer
                         </Text>
                     </View>
@@ -57,6 +57,7 @@ export default class App extends Component {
                 {/*Info page screen layout here*/}
                 <View style={{ display: this.state.infoPageDisplay }}>
                     < View style={styles.contentContainer}>
+                    <ScrollView style = {styles.scrollView}>
                         <Text style={styles.paragraph}>
                             These Are Your Groceries! 
                         </Text>
@@ -123,10 +124,11 @@ export default class App extends Component {
                             value={this.state.veg}
                             />
                         </View>
+                        </ScrollView> 
                     </View>
                 </View>
                 
-                {/*Bottom nav bar shows on each screen*/}
+
                 <View style={styles.navbarContainer}>
                     <TouchableHighlight style={styles.navButton}
                     onPress={this.handleWelcomePagePress}
@@ -162,6 +164,12 @@ const styles = StyleSheet.create({
     },
     title1: {
         fontSize: deviceHeight/10,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: '#5D2A42',
+    },
+    title2: {
+      fontSize: deviceHeight/15,
         textAlign: 'center',
         fontWeight: 'bold',
         color: '#FB6376',
@@ -235,30 +243,34 @@ const styles = StyleSheet.create({
     meat: {
       height: 150,
       borderWidth: 3,
-      color: '#90D7FF',
+      color: '#5D2A42',
       fontSize: 20,
       textAlign: 'center',
+      fontWeight: 'bold', 
   }, 
   snack: {
     height: 150,
     borderWidth: 3,
-    color: '#90D7FF',
+    color: '#5D2A42',
     fontSize: 20,
     textAlign: 'center',
+    fontWeight: 'bold', 
 },
 beverage: {
   height: 150,
   borderWidth: 3,
-  color: '#90D7FF',
+  color: '#5D2A42',
   fontSize: 20,
   textAlign: 'center',
+  fontWeight: 'bold', 
 }, 
 veg: {
   height: 150,
   borderWidth: 3,
-  color: '#90D7FF',
+  color: '#5D2A42',
   fontSize: 20,
   textAlign: 'center',
+  fontWeight: 'bold', 
 },
 cancelBox: {
   width: 40,
