@@ -2,6 +2,8 @@ import React, { Component } from 'react';
  
 import { StyleSheet, ImageBackground, FlatList, Text, View, Alert, TouchableOpacity, TextInput } from 'react-native';
  
+
+/// need to change code to display saved list 
 export default class ListOfLists extends Component {
  
   constructor(props) {

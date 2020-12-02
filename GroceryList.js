@@ -9,6 +9,7 @@ export default class GroceryList extends Component {
     
     super(props);
  
+    ///creates and inilizes an array (named "this") to nothing 
     this.array = [
     ],
  
@@ -22,7 +23,7 @@ export default class GroceryList extends Component {
  
   }
  
- 
+ /// lets user type on data into an array and that info is pushed into the array 
   joinData = () => {
  
     this.array.push({title : this.state.textInput_Holder});
@@ -31,6 +32,8 @@ export default class GroceryList extends Component {
  
   }
  
+
+  /// space between Items 
   FlatListItemSeparator = () => {
     return (
       <View
@@ -49,7 +52,7 @@ export default class GroceryList extends Component {
  
   }
  
- 
+ /// style of background and buttons
   render() {
     return (
 

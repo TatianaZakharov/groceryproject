@@ -10,7 +10,10 @@ import ListOfLists from './ListOfLists';
 
 
 function HomeScreen() {
+
+  /// background image 
   return (
+
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 
       <ImageBackground source={{ uri: 'https://wizardlyshoe4.s-ul.eu/BxxX5s52.jpg' }} style={{ width: '100%', height: '100%' }}>
@@ -22,11 +25,12 @@ function HomeScreen() {
 }
 
 
-
+/// creates tabs and their styles
 const Tab = createBottomTabNavigator();
 
 function AllTabs() {
   return (
+    /// tab for home 
     <Tab.Navigator>
 
       <Tab.Screen
@@ -39,7 +43,7 @@ function AllTabs() {
             
           )
         }}
-
+/// tab for groceries 
       />
 
       <Tab.Screen
@@ -51,8 +55,8 @@ function AllTabs() {
             <MaterialCommunityIcons name="basket-fill" color={color} size={size} />
           )
         }}
+        /// tab for your groceries 
       />
-
       <Tab.Screen
         name="Lists"
         component={ListOfLists}
@@ -69,7 +73,7 @@ function AllTabs() {
     </Tab.Navigator>
   );
 }
-
+/// displays all tabs 
 export default function App() {
   return (
     <NavigationContainer>
