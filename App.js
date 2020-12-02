@@ -13,9 +13,7 @@ function HomeScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 
-      <ImageBackground source={{ uri: 'https://wizardlyshoe4.s-ul.eu/sRPafkZt.jpg' }} style={{ width: '100%', height: '100%' }}>
-
-        <Text>Home Screen !</Text>
+      <ImageBackground source={{ uri: 'https://wizardlyshoe4.s-ul.eu/BxxX5s52.jpg' }} style={{ width: '100%', height: '100%' }}>
 
       </ImageBackground>
 
@@ -59,9 +57,9 @@ function AllTabs() {
         name="Lists"
         component={ListOfLists}
         options={{
-          tabBarLabel: 'Groceries',
+          tabBarLabel: 'Your Groceries',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="basket-fill" color={color} size={size} />
+            <MaterialCommunityIcons name="food-apple" color={color} size={size} />
           )
         }}
       />
